@@ -77,5 +77,6 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 Happy exploring and coding!
-```
-![File Explorer With Flux Architecture](https://github.com/girijashankarj/file_explorer_app_with_flux_architecture/assets/38050722/cff1f398-1282-45e8-9369-9a7788d0343f)
+
+![File Explorer With Flux Architecture_](https://github.com/girijashankarj/file_explorer_app_with_flux_architecture/assets/38050722/4a4c6865-6e08-427f-b798-0e5bb3277fe2)
+
