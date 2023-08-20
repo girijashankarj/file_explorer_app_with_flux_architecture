@@ -1,0 +1,40 @@
+# Logs
+logs
+*.log
+
+# Node.js dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+build/
+*.out
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor-specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# Dependency lock files
+package-lock.json
+yarn.lock
+npm-shrinkwrap.json
+.pnp.*
+.pnp.js
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini

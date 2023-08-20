@@ -1,0 +1,213 @@
+/* Add your CSS styles here */
+
+
+/* Global Properties According to Theme */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #0088FF;
+    --white: #f2f2f2;
+    --black: #333;
+    --red: #F0706A;
+    --padding-small: 5px;
+    --padding-medium: 10px;
+    --margin-small: 5px;
+    --margin-medium: 10px;
+    --border-radius-primary: 5px;
+}
+
+/* Elements */
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: var(--white);
+    margin: 0;
+    padding: 2%;
+    background-color: var(--black);
+}
+
+input[type='text'] {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    background-color: var(--white);
+    flex: 1;
+    border: none;
+    outline: none;
+}
+
+/* Indentifiers */
+#mainHeader {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    padding: 10px 25px;
+    margin-bottom: 10px;
+    background-color: var(--white);
+    display: flex;
+    color: var(--black);
+    justify-content: space-between;
+    align-items: center;
+}
+
+#mainSection {
+    /* min-height: 100%; */
+    display: flex;
+    flex-direction: column;
+}
+
+#mainFooter {
+    width: -webkit-fill-available;
+    position: fixed;
+    bottom: 0;
+    padding: 25px;
+}
+
+#search-container {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    border: 1px solid var(--black);
+    padding: 5px 10px;
+    border-radius: var(--border-radius-primary)
+}
+
+#search-container button {
+    background-color: var(--white);
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: var(--border-radius-primary)
+}
+
+#footerWrapper {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+/* Classes */
+
+.fa-icon {
+    margin-left: 5px;
+    color: var(--white);
+    position: relative;
+    display: inline-block;
+}
+
+.fa-icon-black {
+    color: var(--black);
+}
+
+.fa-icon-red {
+    color: var(--red);
+    font-size: 10px;
+}
+
+.fa-icon-red:hover {
+    color: var(--black);
+}
+
+.file-explorer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--black);
+}
+
+.node {
+    display: block;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.node .icon {
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.node-label {
+    padding: 0 5px;
+    line-height: 30px;
+    width: 150px;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    border: 0.5px dashed var(--white);
+}
+
+.node button {
+    border: none;
+    background-color: var(--black);
+}
+
+.node button:hover {
+    color: var(--blue);
+}
+
+/* Media Queries */
+
+@media screen and (max-device-width:640px),
+screen and (max-width:640px) {
+
+    #mainSection,
+    #mainHeader,
+    #fileExplorer {
+        display: none;
+    }
+}
+
+/* Tool Tip*/
+/* Tooltip text */
+.tooltip .tooltiptext {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
