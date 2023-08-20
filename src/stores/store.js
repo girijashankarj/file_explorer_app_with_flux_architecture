@@ -10,52 +10,7 @@ class FileExplorerStore {
             label: 'Root Folder',
             fileType: FileTypes.FOLDER_TYPE,
             expanded: ExpandStatus.EXPAND,
-            children: [
-                {
-                    id: 'folder1',
-                    label: 'Folder 1',
-                    fileType: FileTypes.FOLDER_TYPE,
-                    expanded: true,
-                    children: [
-                        {
-                            id: 'folder11',
-                            label: 'Folder 11',
-                            fileType: FileTypes.FOLDER_TYPE,
-                            expanded: true,
-                            children: [],
-                        },
-                        {
-                            id: 'folder12',
-                            label: 'Folder 12',
-                            fileType: FileTypes.FOLDER_TYPE,
-                            expanded: true,
-                            children: [
-                                {
-                                    id: 'file12',
-                                    label: 'File 13',
-                                    fileType: FileTypes.FILE_TYPE,
-                                    expanded: null,
-                                    children: null,
-                                }
-                            ],
-                        }
-                    ],
-                }, {
-                    id: 'folder2',
-                    label: 'Folder 2',
-                    fileType: FileTypes.FOLDER_TYPE,
-                    expanded: true,
-                    children: [
-                        {
-                            id: 'file21',
-                            label: 'File 21',
-                            fileType: FileTypes.FILE_TYPE,
-                            expanded: null,
-                            children: null,
-                        }
-                    ],
-                }
-            ],
+            children: [],
         };
         this.listeners = [];
     }
