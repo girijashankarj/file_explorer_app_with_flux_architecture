@@ -1,6 +1,6 @@
 // utils.js
 
-import { ExpandStatus, FileTypes } from "./commonConstants";
+import { ExpandStatus, FileTypes, ValidationContext } from "./commonConstants";
 
 export const createNewItem = ( itemName, fileType ) => {
     // Implement your createNewItem logic based on your provided code
@@ -42,7 +42,7 @@ export const findNodeByLabel = ( parent, label ) => {
     return null;
 }
 
-export const validateFileName = ( fileName = "", state ) => {
+export const validateFileName = ( fileName = "", state, validationContext ) => {
     // Implement your validateFileName logic based on your provided code
     const maxCharLimit = 50;
 
@@ -65,9 +65,13 @@ export const validateFileName = ( fileName = "", state ) => {
     }
 
     // Check for duplicates
-    const allFileNames = Object.keys( state ).flatMap( folder => Object.keys( state[folder] ) );
-    if ( findNodeByLabel( state, checkFileName ) ) {
+    const fileFound = findNodeByLabel( state, checkFileName );
+    if ( fileFound != null && validationContext == ValidationContext.ADD_ITEM ) {
         return 'File name is a duplicate and already exists.';
+    }
+
+    if ( fileFound != null && validationContext == ValidationContext.SEARCH_ITEM ) {
+        return 'File not Found.';
     }
 
     return null; // Validation successful

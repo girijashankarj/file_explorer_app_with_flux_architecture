@@ -1,6 +1,5 @@
 // store.js
-import { ExpandStatus, FileTypes } from '../common/commonConstants';
-import { applyInvertFilterFor3Seconds } from '../common/domOperations';
+import { ExpandStatus, FileTypes, ValidationContext } from '../common/commonConstants';
 import { createNewItem, findNodeById, findParentPath, validateFileName } from '../common/utils';
 
 class FileExplorerStore {
@@ -41,11 +40,11 @@ class FileExplorerStore {
         switch ( action.type ) {
             case 'ADD_NODE':
                 const itemName = prompt( `Enter ${fileType} name: ` );
-                const validationResult = validateFileName( itemName, { ...this.state } );
+                const validationResult = validateFileName( itemName, { ...this.state }, ValidationContext.ADD_ITEM );
                 if ( validationResult ) {
                     alert( `Validation Failed: ${validationResult} ` );
                 } else {
-                    addNode( itemName, fileType, parentId );
+                    this.addNode( itemName, fileType, parentId );
                     this.updateState( { ...this.state } );
                 }
                 break;
@@ -62,7 +61,7 @@ class FileExplorerStore {
                 this.updateState( { ...this.state } );
                 break;
             case 'SEARCH_AND_EXPAND_NODE':
-                const searchValidation = validateFileName( searchLabel, { ...this.state } );
+                const searchValidation = validateFileName( searchLabel, { ...this.state }, ValidationContext.SEARCH_ITEM );
                 if ( searchValidation ) {
                     alert( `Search Validation Failed: ${searchValidation} ` );
                 } else {
