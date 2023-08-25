@@ -22,14 +22,14 @@ To run the File Explorer App on your local machine, follow these steps:
 1. **Clone the repository:** Clone the repository to your machine by running the following command in your terminal:
    
    ```sh
-   git clone https://github.com/girijashankarj/file_explorer_app_with_flux_architecture.git
+   git clone https://github.com/girijashankarj/lwt_js_file_explorer_app_with_flux
 
 ### Navigate to the Project Directory
 
 Open your terminal and navigate to the project directory using the `cd` command:
 
 ```sh
-cd file_explorer_app_with_flux_architecture
+cd lwt_js_file_explorer_app_with_flux
 ```
 
 ### Install Dependencies
